@@ -13,7 +13,7 @@ io.on('connection', socket => {
     })
 })
 
-server.listen(4000, () => {
-  console.log("server is running", 4000);
+server.listen(3000, () => {
+  console.log("server is running");
 });
 
