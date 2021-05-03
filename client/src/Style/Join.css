@@ -1,0 +1,4 @@
+.joinForm{
+    display: flex;
+    flex-direction: column;
+}

@@ -1,19 +1,21 @@
-const path = require('path');
 const express = require('express');
-const app = express();
 const http = require('http');
 const socket = require('socket.io');
+const PORT = process.env.PORT || 4000;
 
+const app = express();
 const server = http.createServer(app);
 const io = socket(server);
 
 io.on('connection', socket => {
-    socket.on('message', ({name, message}) => {
-        io.emit('message', {name, message});
+    console.log('We have a connection')
+
+    socket.on('disconnect', () => {
+        console.log('user has left');
     })
 })
 
-server.listen(3000, () => {
+server.listen(PORT, () => {
   console.log("server is running");
 });
 
